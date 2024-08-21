@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-app.listen(3000);
+const PORT = 3000;
 
 // STORE NOTES USING THE FS MODULE
 
@@ -21,3 +21,6 @@ AND THEN RETURN THE NEW NOTE TO THE CLIENT. FIND A WAY TO GIVE EACH NOTE A UNIQU
 INTO NPM PACKAGES THAT CAN DO THIS FOR ME)*/
 
 // BONUS: SEE IF I CAN ADD THE DELETE ROUTE TO THE APP USING GUIDELINE ON BOOTCAMP WEBSITE
+app.listen(PORT, () =>
+  console.log(`Server is running @ http://localhost: ${PORT}!`)
+);
