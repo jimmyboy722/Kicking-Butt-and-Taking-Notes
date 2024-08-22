@@ -1,25 +1,18 @@
+// IMPORTING EXPRESS, FS MODULE, AND SETTING UP THE SERVER
 const express = require("express");
 const app = express();
+const PORT = process.env.PORT || 3000;
+const fs = require("fs");
+//IMPORTING ROUTE MODULES
+const apiRoutes = require("./routes/apiroute");
+const htmlRoutes = require("./routes/htmlroutes");
 
-const PORT = 3000;
-
-// STORE NOTES USING THE FS MODULE
-
-// RETRIEVE NOTES USING THE FS MODULE
-
-//CREATE THE FOLLOWING HTML ROUTES:
-/* (GET/NOTES) SHOULD RETURN THE NOTES.HTML FILE
-
-   (GET *) SHOULD RETURN THE INDEX.HTML FILE */
-
-/* THE FOLLOWING API ROUTES SHOULD BE CREATED:
-
-(GET/API/NOTES) SHOULD READ THE DB.JSON FILE AND RETURN ALL SAVED NOTES
-
-(POST/API/NOTES) SHOULD RECEIVE A NEW NOTE TO SAVE ON THE REQUEST BODY, ADD IT TO THE DB.JSON FILE, 
-AND THEN RETURN THE NEW NOTE TO THE CLIENT. FIND A WAY TO GIVE EACH NOTE A UNIQUE ID WHEN IT'S SAVED (LOOK
-INTO NPM PACKAGES THAT CAN DO THIS FOR ME)*/
-
+//THE FOLLOWING IS THE U IN 'CRUD' FOR USE.
+app.use("/api", apiRoutes);
+app.use("/", htmlRoutes);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 // BONUS: SEE IF I CAN ADD THE DELETE ROUTE TO THE APP USING GUIDELINE ON BOOTCAMP WEBSITE
 app.listen(PORT, () =>
   console.log(`Server is running @ http://localhost: ${PORT}!`)
