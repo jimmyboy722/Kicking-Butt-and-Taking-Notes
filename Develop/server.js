@@ -7,7 +7,7 @@ const fs = require("fs");
 const apiRoutes = require("./routes/apiroute");
 const htmlRoutes = require("./routes/htmlroutes");
 
-//THE FOLLOWING IS THE U IN 'CRUD' FOR USE.
+// ADDING MIDDLEWARE TO THE APPLICATION
 app.use("/api", apiRoutes);
 app.use("/", htmlRoutes);
 app.use(express.json());

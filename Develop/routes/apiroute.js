@@ -9,18 +9,19 @@ router.get("/api/notes", (req, res) => {
   fs.readFile("db.json", "utf-8", (err, data) => {
     if (err) {
       console.error(err);
-      res.status(500).send("Error reading data!");
+      res.status(500).json({ Error: "Failed reading notes" });
       return;
     }
 
-    const jsonData = JSON.parse(notes);
-    res.JSON(jsonData);
+    const notes = JSON.parse(data);
+    res.JSON(notes);
   });
 });
 
 router.post("/api/notes", (req, res) => {
-  noteHandler
-    .addNote(req.body)
-    .then((note) => res.json(note))
-    .catch((err) => res.status(500).json(err));
+  noteHandler.removeNote(req.params.id);
+  if (err) console.error(err);
+  res.status(500).json({ Error: "Note Failed!" });
 });
+
+module.exports = router;
