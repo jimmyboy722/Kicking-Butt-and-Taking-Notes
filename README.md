@@ -4,7 +4,11 @@
  - With Note Taker, you can create new notes and read old notes.
  - There will be a function to delete notes coming soon.
  - The following are mock-ups of the site and its functionalities:
-   
+
+   <img width="293" alt="image" src="https://github.com/user-attachments/assets/665dc245-5538-4495-88de-1487435d9bd6">
+---
+   <img width="491" alt="image" src="https://github.com/user-attachments/assets/9dc832ac-986b-48d7-b8fd-35f97704b484">
+
 ---
 ## <ins>Installation</ins>
 - No installation needed, just use the following link to navigate to the deployed application:
