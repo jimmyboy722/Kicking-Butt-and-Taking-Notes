@@ -10,7 +10,7 @@ const uuid = require("uuid/v4");
 const util = require("util");
 const { error } = require("console");
 
-// PROMISIFYING FILE SYTEM METHODS TO CONVERT CALL-BACK FUNCTIONS TO PROMISES
+// PROMISIFYING FILE SYSTEM METHODS TO CONVERT CALL-BACK FUNCTIONS TO PROMISES
 //MAKES IT EASIER TO WORK WITH USING .then() METHOD OR await/async
 const writeFilePromise = util.promisify(fs.writeFile);
 const readFilePromise = util.promisify(fs.readFile);
@@ -58,3 +58,5 @@ class Notehandler {
       .then(() => newNote);
   }
 }
+
+module.exports = new Notehandler();
