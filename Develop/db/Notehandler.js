@@ -5,7 +5,7 @@ ADDING AND REMOVING NOTES FROM THE DB.JSON FILE*/
 //FILE SYSTEM IMPORT
 const fs = require("fs");
 //IMPORTED TO CREATE UNIQUE ID'S FOR THE NOTES
-const uuid = require("uuid/v4");
+const { v4: uuid } = require("uuid");
 // NODE UTILITY MODULE FOR USE IN PROMISE OBJECTS
 const util = require("util");
 const { error } = require("console");

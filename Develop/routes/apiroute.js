@@ -5,8 +5,8 @@ const noteHandler = require("../db/Notehandler");
 // IMPORTING THE FS MODULE TO READ CONTENTS OF DB.JSON FILE
 const fs = require("fs");
 
-router.get("/api/notes", (req, res) => {
-  fs.readFile("db.json", "utf-8", (err, data) => {
+router.get("/notes", (req, res) => {
+  fs.readFile("./db/db.json", "utf-8", (err, data) => {
     if (err) {
       console.error(err);
       res.status(500).json({ Error: "Failed reading notes" });
@@ -14,14 +14,14 @@ router.get("/api/notes", (req, res) => {
     }
 
     const notes = JSON.parse(data);
-    res.JSON(notes);
+    res.json(notes);
   });
 });
 
-router.post("/api/notes", (req, res) => {
-  noteHandler.removeNote(req.params.id);
-  if (err) console.error(err);
-  res.status(500).json({ Error: "Note Failed!" });
+router.post("/notes", (req, res) => {
+  noteHandler.addNotes(req.body).then((note) => {
+    res.json(note);
+  });
 });
 
 module.exports = router;
