@@ -8,12 +8,12 @@ const apiRoutes = require("./routes/apiroute");
 const htmlRoutes = require("./routes/htmlroutes");
 
 // ADDING MIDDLEWARE TO THE APPLICATION
+app.use("/api", apiRoutes);
+app.use("/", htmlRoutes);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.use("/api", apiRoutes);
-app.use("/", htmlRoutes);
-//
+// BONUS: SEE IF I CAN ADD THE DELETE ROUTE TO THE APP USING GUIDELINE ON BOOTCAMP WEBSITE
 app.listen(PORT, () =>
   console.log(`Server is running @ http://localhost: ${PORT}!`)
 );
