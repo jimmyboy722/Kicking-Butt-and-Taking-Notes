@@ -2,7 +2,6 @@
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
-const fs = require("fs");
 //IMPORTING ROUTE MODULES
 const apiRoutes = require("./routes/apiroute");
 const htmlRoutes = require("./routes/htmlroutes");
