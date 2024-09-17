@@ -12,7 +12,7 @@ router.get("/notes", (req, res) => {
 // USING "GET *"  TO RETURN THE INDEX.HTML FILE PER GETTING STARTED INSTRUCTIONS
 router.get("*", (req, res) => {
   // AGAIN USING SENDFILE METHOD. SENDS THE INDEX.HTML FILE AS A RESPONSE TO ANY UNMATCHED ROUTES
-  res.sendFile(path.join(__dirname, "../public/index.html"));
+  res.sendFile(path.join(__dirname, "../index.html"));
 });
 
 module.exports = router;
